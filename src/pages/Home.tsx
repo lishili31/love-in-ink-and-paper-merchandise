@@ -130,7 +130,7 @@ export default function Home() {
             <p className="hero-intro">一纸一笔，写下平日的感谢与珍重。挑选信封、明信片和校园周边，让没有说出口的话，都有迹可循。</p>
             <a className="primary-cta" href="#shop">开始选购 <ArrowRight size={19} /></a>
             <div className="hero-meta">
-              <span>高三（5）班</span><span>18 款商品</span><span>统一汇总订购</span>
+              <span>演示班级</span><span>18 款商品</span><span>统一汇总订购</span>
             </div>
           </div>
           <div className="hero-visual" aria-label="情归纸笔产品价目表预览">
@@ -244,7 +244,7 @@ export default function Home() {
         </section>
       </main>
 
-      <footer><span className="footer-brand">情归纸笔</span><span>高三（5）班 · 班级周边统一订购</span><Link to="/admin">班级管理</Link></footer>
+      <footer><span className="footer-brand">情归纸笔</span><span>演示站点 · 数据均为虚构</span><Link to="/admin">班级管理</Link></footer>
 
       {itemCount > 0 && <a className="mobile-cart-bar" href="#checkout"><span>{itemCount} 件 · ¥{total.toFixed(1)}</span><b>去填写订购单 <ArrowRight size={16} /></b></a>}
 

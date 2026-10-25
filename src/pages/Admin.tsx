@@ -42,7 +42,7 @@ export default function Admin() {
       const url = URL.createObjectURL(blob);
       const anchor = document.createElement("a");
       anchor.href = url;
-      anchor.download = "高三（5）班购买明细表.xlsx";
+      anchor.download = "情归纸笔-购买明细表.xlsx";
       document.body.appendChild(anchor);
       anchor.click();
       anchor.remove();
@@ -116,7 +116,7 @@ export default function Admin() {
           )}
         </section>
       </main>
-      <footer className="admin-footer">情归纸笔 · 高三（5）班购买明细统计</footer>
+      <footer className="admin-footer">情归纸笔 · 演示数据</footer>
     </div>
   );
 }

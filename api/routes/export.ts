@@ -12,7 +12,7 @@ exportRoutes.post("/", bodyLimit({ maxSize: 8 * 1024, onError: (c) => c.body(nul
 
   const summary = await getClassSummary();
   const workbook = new ExcelJS.Workbook();
-  workbook.creator = "情归纸笔·高三（5）班";
+  workbook.creator = "情归纸笔·演示站点";
   workbook.created = new Date();
   const sheet = workbook.addWorksheet("table_20261024", {
     views: [{ state: "frozen", ySplit: 1 }],

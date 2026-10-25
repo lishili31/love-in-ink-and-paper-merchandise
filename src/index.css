@@ -44,6 +44,14 @@ body {
 }
 button, input, select, textarea { font: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
+.demo-banner {
+  padding: 7px 16px;
+  background: #f4dde2;
+  color: #7a2334;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-align: center;
+}
 button { cursor: pointer; }
 button:disabled { cursor: not-allowed; opacity: .5; }
 a { color: inherit; text-decoration: none; }
