@@ -23,14 +23,17 @@ export const products: Product[] = [
   { id: "postcard-c2", name: "明信片 C 款②", category: "异形猫猫", price: 1.5, unit: "张", image: "/images/products/postcard-c2.jpg", excelRow: 13 },
   { id: "postcard-c3", name: "明信片 C 款③", category: "异形猫猫", price: 1.5, unit: "张", image: "/images/products/postcard-c3.jpg", excelRow: 14 },
   { id: "sticker", name: "猫猫贴纸", category: "贴纸", price: 1, unit: "张", image: "/images/products/sticker.jpg", excelRow: 15 },
-  { id: "abstract-sticker", name: "抽象贴纸", category: "贴纸", price: 0.5, unit: "张", image: "/images/products/abstract-sticker.jpg", excelRow: 16 },
-  { id: "fridge-magnet", name: "校门建筑款冰箱贴", category: "冰箱贴", price: 10, unit: "个", image: "/images/products/fridge-magnet.jpg", excelRow: 17 },
+  { id: "abstract-sticker", name: "抽象贴纸", category: "贴纸", price: 0.5, unit: "张", image: "/images/products/abstract-sticker.jpg", excelRow: 20 },
+  { id: "fridge-magnet", name: "校门建筑款冰箱贴", category: "冰箱贴", price: 10, unit: "个", image: "/images/products/fridge-magnet.jpg", excelRow: 16 },
+  { id: "bookmark-1", name: "书签①", category: "书签", price: 1.5, unit: "张", image: "/images/products/bookmark-1.jpg", excelRow: 17 },
+  { id: "bookmark-2", name: "书签②", category: "书签", price: 1.5, unit: "张", image: "/images/products/bookmark-2.jpg", excelRow: 18 },
+  { id: "bookmark-3", name: "书签③", category: "书签", price: 1.5, unit: "张", image: "/images/products/bookmark-3.jpg", excelRow: 19 },
 ];
 
 // 花名册单独放在 contracts/roster.ts 中（已被 .gitignore 忽略），避免真实学生信息进入公开仓库。
 export { roster } from "./roster";
 
-export const categories = ["全部", "信封信纸", "明信片 A", "明信片 B", "明信片 C", "贴纸", "冰箱贴"] as const;
+export const categories = ["全部", "信封信纸", "明信片 A", "明信片 B", "明信片 C", "贴纸", "冰箱贴", "书签"] as const;
 
 export function productCategory(product: Product) {
   if (["信封", "信纸", "封口贴"].includes(product.category)) return "信封信纸";

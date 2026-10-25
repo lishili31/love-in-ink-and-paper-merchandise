@@ -25,14 +25,16 @@ exportRoutes.post("/", bodyLimit({ maxSize: 8 * 1024, onError: (c) => c.body(nul
   const categories: Record<number, string | null> = {
     2: "信封", 3: null, 4: "信纸", 5: "封口贴", 6: "明信片\n(A款)", 7: null, 8: null,
     9: "明信片\n(B款)", 10: null, 11: null, 12: "明信片\n(C款)", 13: null, 14: null,
-    15: "贴纸", 16: null, 17: "冰箱贴",
+    15: "贴纸", 16: "冰箱贴", 17: "书签", 18: null, 19: null, 20: "贴纸",
   };
   const excelNames: Record<string, string> = {
     "envelope-blue": "蓝色款信封", "envelope-green": "绿色款信封", "letter-paper": "信纸", "wax-seal": "封口贴",
     "postcard-a1": "A款①", "postcard-a2": "A款②", "postcard-a3": "A款③",
     "postcard-b1": "B款①", "postcard-b2": "B款②", "postcard-b3": "B款③",
     "postcard-c1": "C款①", "postcard-c2": "C款②", "postcard-c3": "C款③",
-    "sticker": "猫猫贴纸", "abstract-sticker": "抽象贴纸", "fridge-magnet": "校门建筑款冰箱贴",
+    "sticker": "猫猫贴纸", "fridge-magnet": "校门建筑款冰箱贴",
+    "bookmark-1": "书签①", "bookmark-2": "书签②", "bookmark-3": "书签③",
+    "abstract-sticker": "抽象贴纸",
   };
   for (const product of summary.productTotals) {
     const row = sheet.getRow(product.excelRow);
@@ -43,13 +45,13 @@ exportRoutes.post("/", bodyLimit({ maxSize: 8 * 1024, onError: (c) => c.body(nul
     row.getCell(5).value = product.subtotal;
     row.height = 25;
   }
-  sheet.getCell("A18").value = "汇总";
-  sheet.getCell("B18").value = "本班应付总金额";
-  sheet.getCell("E18").value = summary.totalAmount;
-  sheet.getRow(18).height = 28;
+  sheet.getCell("A21").value = "汇总";
+  sheet.getCell("B21").value = "本班应付总金额";
+  sheet.getCell("E21").value = summary.totalAmount;
+  sheet.getRow(21).height = 28;
   sheet.eachRow((row) => row.eachCell({ includeEmpty: true }, (cell, col) => {
     if (col > 5) return;
-    cell.font = { name: "Microsoft YaHei", size: 11, bold: row.number === 1 || row.number === 18 };
+    cell.font = { name: "Microsoft YaHei", size: 11, bold: row.number === 1 || row.number === 21 };
     cell.alignment = { horizontal: "center", vertical: "middle", wrapText: true };
     cell.border = { top: { style: "thin" }, left: { style: "thin" }, bottom: { style: "thin" }, right: { style: "thin" } };
     if (row.number === 1) cell.fill = { type: "pattern", pattern: "solid", fgColor: { argb: "FFDCE6DF" } };
