@@ -93,7 +93,7 @@ export default function Admin() {
         </section>
 
         <section className="admin-section">
-          <div className="admin-section-heading"><div><p>01 / PRODUCT TOTALS</p><h2>商品分类汇总</h2></div><span>与原报表 18 行一一对应</span></div>
+          <div className="admin-section-heading"><div><p>01 / PRODUCT TOTALS</p><h2>商品分类汇总</h2></div><span>与商品清单逐项对应</span></div>
           <div className="table-wrap">
             <table className="summary-table">
               <thead><tr><th>商品款式</th><th>单价</th><th>订购总数量</th><th>小计金额</th></tr></thead>

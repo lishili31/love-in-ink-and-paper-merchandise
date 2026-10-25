@@ -15,7 +15,7 @@ const orderInput = identityInput.extend({
   items: z.array(z.object({
     productId: z.string(),
     quantity: z.number().int().min(1).max(99),
-  })).min(1, "请至少选择一件商品").max(18).refine((items) => {
+  })).min(1, "请至少选择一件商品").max(products.length).refine((items) => {
     const ids = items.map((item) => item.productId);
     return new Set(ids).size === ids.length && ids.every((id) => products.some((product) => product.id === id));
   }, "商品信息不正确"),
